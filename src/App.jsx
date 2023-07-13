@@ -1,14 +1,16 @@
 import { useState } from 'react'
 import './App.css'
 import SearchBar from './Components/SearchBar'
+import SearchResultsList from './Components/SearchResultsList'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [results,setResult]=useState([])
+
   return (
     <div className='App'>
       <div className='search-bar-container'>
-        <SearchBar>Searchbar</SearchBar>
-        <div>search Results</div>
+        <SearchBar setResult={setResult}/>
+        <SearchResultsList results={results}/>
       </div>
     </div>
   )
